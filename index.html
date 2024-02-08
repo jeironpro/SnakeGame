@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SNAKE GAME</title>
     <link rel="icon" href="img/serpiente.png">
     <link rel="stylesheet" href="styles.css">
@@ -15,12 +15,31 @@
         </div>
         <div id="serpiente" class="contenedor">
             <!-- El juego se genera desde el JavaScript -->
+            <div id="iniciar" class="iniciar">
+                <img src="img/iniciar.png" alt="INICIAR">
+            </div>
         </div>
         <div id="puntuacion" class="puntuacion">
             SCORE: 0 
             <!-- La puntuacion se genera desde el JavaScript -->
         </div>
+
+        <div class="botones">
+            <div id="arriba" class="arriba">
+               <button><i class="fas fa-arrow-up"></i></button>
+            </div>
+            <div id="izquierda" class="izquierda">
+                <button><i class="fas fa-arrow-left"></i></button>
+            </div>
+            <div id="abajo" class="abajo">
+                <button><i class="fas fa-arrow-down"></i></button>
+            </div>
+            <div id="derecha" class="derecha">
+                <button><i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
     </div>
     <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/25da21ab57.js" crossorigin="anonymous"></script>
 </body>
 </html>

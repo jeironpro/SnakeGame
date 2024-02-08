@@ -87,6 +87,7 @@ function dibujar() {
     comidaElemento.style.position = 'absolute'; 
     comidaElemento.style.left = comida.x + 'px'; 
     comidaElemento.style.top = comida.y + 'px'; 
+    
     contenedorJuego.appendChild(comidaElemento); 
 } 
 
@@ -172,8 +173,8 @@ document.addEventListener('keydown', event => {
         } else if (key === "ArrowRight" && direccion !== "Left") { 
             direccion = "Right";
         }
+        
         contadorPulsacion++;
-
         if (contadorPulsacion === 2) {
             velocidad = 200;
             clearInterval(intervalo);
@@ -182,7 +183,7 @@ document.addEventListener('keydown', event => {
                 dibujar();
             }, velocidad);
         } else {
-            velocidad
+            velocidad = 500;
         }
     }
 });
@@ -217,8 +218,26 @@ function ganar() {
     const totalSegmentos = Math.floor((contenedorJuego.offsetWidth * contenedorJuego.offsetHeight) / (tamano * tamano));
     return serpiente.length === totalSegmentos;
 }
-    
-intervalo = setInterval(() => { 
-    moverSerpiente();
-    dibujar(); 
-}, velocidad);
+
+document.getElementById("arriba").addEventListener('click', function() {
+    direccion = "Up";
+});
+
+document.getElementById("derecha").addEventListener('click', function() {
+    direccion = "Right";
+});
+
+document.getElementById("abajo").addEventListener('click', function() {
+    direccion = "Down";
+});
+
+document.getElementById("izquierda").addEventListener('click', function() {
+    direccion = "Left";
+});
+
+document.getElementById("iniciar").addEventListener('click', function() {
+    intervalo = setInterval(() => { 
+        moverSerpiente();
+        dibujar(); 
+    }, velocidad);
+});  
